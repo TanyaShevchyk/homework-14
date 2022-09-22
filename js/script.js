@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Мінімум 3
     let size = prompt('Який обсяг твоєї флешки? (Гб)', '');
-    let files = Math.floor(size * 1000 / 820);
+    let files = Math.floor(size * 1024 / 820);
     alert(`Ти можеш завантажити ${files} файлів обсягом 820Мб`);
 
     //Норма 1
@@ -28,8 +28,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let number = prompt('Введіть тризначне число', '');
     let z = number % 10;
-    let w = number[1] % 10;
-    let v = number[0] % 10;
+    let v = (number / 100).toFixed(0);
+    let w = (number - (v * 100) - z) / 10;
 
     alert(`Yor revers number is ${z}${w}${v}`);
 
@@ -40,6 +40,6 @@ document.addEventListener('DOMContentLoaded', () => {
     let percent = deposit * 0.05 / 6;
     let total = deposit + percent;
 
-    alert(`After 2 month you get ${total}`);
+    alert(`After 2 month you get ${percent}`);
 
 });
